@@ -74,16 +74,20 @@
 				</div>
 			</div>
 			<div class="chat_main">
-				<div class="chat_post">
-					<div class="chat_avatar" />
-					<div class="chat_content">
-						<div class="chat_name">Hamza</div>
+				{#if openedSalon.messages}
+					{#each openedSalon.messages as message}
+						<div class="chat_post">
+							<div class="chat_avatar" />
+							<div class="chat_content">
+								<div class="chat_name">{message.auteur}</div>
 
-						<div class="chat_datePosted">14-06-1997</div>
+								<div class="chat_datePosted">{message.date}</div>
 
-						<div class="chat_message">Ceci est un message</div>
-					</div>
-				</div>
+								<div class="chat_message">{message.content}</div>
+							</div>
+						</div>
+					{/each}
+				{/if}
 			</div>
 			<div class="chat_input">
 				<div class="input_container">

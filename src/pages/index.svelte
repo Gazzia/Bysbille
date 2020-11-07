@@ -4,13 +4,18 @@
 	import Connect from "../component/Connect.svelte";
 	import SalonList from "../component/SalonList.svelte";
 	import ListUsers from "../component/ListUsers.svelte";
+	import {sockt} from "../stores.js";
 	let servers = [
 		{
 			name: "Simplon",
 			img: "../assets/img/Simplon.jpg",
 			id: 1,
 			salons: [
-				{name: "blabla", id: 1},
+				{
+					name: "blabla",
+					id: 1,
+					messages: [{auteur: "Hamza", content: "Ceci est un message", date: "22-03-1997"}],
+				},
 				{name: "Mordor", id: 2},
 			],
 		},
@@ -20,6 +25,15 @@
 	let openedSalon = false;
 
 	let connected = true;
+	$sockt.emit("connected");
+</script>
+
+</script>
+
+</script>
+
+</script>
+
 </script>
 
 <style>
